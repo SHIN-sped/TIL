@@ -8,11 +8,11 @@
 
 ---
 
-## [마크다운](assets/github.md)
+## [마크다운](https://github.com/SHIN-sped/TIL/blob/master/markdown/Github.md)
 
-## [파이썬](python/python.md)
+## [파이썬](https://github.com/SHIN-sped/TIL/blob/master/Python/python.md)
 
-## 프로젝트()
+## 프로젝트(https://github.com/SHIN-sped/TIL/blob/master/PER-Project/sped-project.md)
 
 
 
