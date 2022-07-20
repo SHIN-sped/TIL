@@ -1,3 +1,5 @@
+ 
+
 
 
 # 매일 배운 내용 정리하기
@@ -401,7 +403,276 @@ float('3.5') + 5 # 8.5
 
 ## 28. 세트(Set)
 
+### 유일한 값들의 모음(collection)
+
+### 순서가 없고 중복된 값이 없음
+
+### 수학에서의 집합과 동일한 구조를 가지며, 집합 연산도 가능
+
+### 변경 가능하며(mutable), 반복 가능함(iterable)
+
+### 단, 셋은 순서가 없어 반복의 결과가 정의한 순서와 다를 수 있음
 
 
 
+## 29. 세트(set) 생성
 
+### 중괄호({}) 혹은 set()을 통해 생성, 빈 set를 만들기 위해서는 set()을 반드시 활용해야 함
+
+### 순서가 없어 별도의 값에 접근할 수 없음
+
+### 순서가 없어 인덱스 접근 등 특정 값에 접근할 수 없음
+
+
+
+## 30. 세트(set) 추가/삭제
+
+### 값 추가는 .add()를 활용하여 추가하고자 하는 값을 전달
+
+### 값 삭제는 .remove()를 활용하여 삭제하고자 하는 값을 전달
+
+
+
+## 31. 셋(set) 활용
+
+### 세트를 활용하면 다른 컨테이너에서 중복된 값을 쉽게 제거할 수 있음
+
+### 단, 이후 순서가 무시되므로 순서가 중요한 경우 사용할 수 없음
+
+## 리스트에서 고유한 지역의 개수는?  len(set(my_list))
+
+## 고유한 리스트? set(my_list)
+
+
+
+## 32. 딕셔너리
+
+### 키-값(key-value) 쌍으로 이뤄진 모음(collection)
+
+### key(불변 자료형만 가능(리스트, 딕셔너리 등은 불가능함))
+
+### values(어떠한 형태든 관계 없음)
+
+### 키와 값은 :로 구분 됩니다. 개별 요소는 ,로 구분됩니다
+
+## 변경 가능하며(mutable), 반복 가능함(iterable)
+
+### 딕셔너리는 반복하면 키가 반환됨
+
+
+
+## 33. 딕셔너리(dictionary) 생성
+
+### key와 value가 쌍으로 이뤄진 자료구조
+
+### key는 변경 불가능한 데이터(immutable)만 활용 가능
+
+- #### string integer float boolean tuple range
+
+### value는 모든 값으로 설정 가능(list, dictionary 등)
+
+
+
+## 34. 딕셔너리(dictionary) 접근
+
+
+
+```python
+movie = {
+'title': '설국열차',
+'genres': ['SF', '액션', '드라마'], 'open_date': '2013-08-01', 'time': 126,
+'adult': False,
+}
+
+movie['genres']
+# ['SF', '액션', '드라마']
+
+movie['actors’]
+Traceback (most recent call last): File "<stdin>", line 1, in <module> KeyError: 'actors'
+```
+
+
+
+\# ['SF', '액션', '드라마']
+
+movie['actors’]
+ Traceback (most recent call last): File "<stdin>", line 1, in <module> KeyError: 'actors'
+
+</code>
+
+## 35. 딕셔너리(dictionary) 키-값 추가 및 변경
+
+### 이미 해당하는 키가 있다면 기존 값이 변경됩니다
+
+```python
+ students = {'홍길동': 100, '김철수': 90} students['홍길동'] = 80
+# {'홍길동': 80, '김철수': 90} students['박영희'] = 95
+# {'홍길동': 80, '김철수': 90, '박영희': 95}
+```
+
+
+
+## 36. 딕셔너리(Dictionary) 키-값 삭제
+
+### 키를 삭제하고자하면 .pop()를 활용하여 삭제하고자 하는 키를 전달
+
+```python
+students = {'홍길동': 30, '김철수': 25} students.pop('홍길동')
+students
+# {'김철수': 25}
+```
+
+### 키가 없는 경우는 KeyError 발생
+
+```python
+ students = {'홍길동': 30, '김철수': 25} students.pop('jane')
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module> KeyError: 'jane'
+```
+
+
+
+## 37. 제어문
+
+### 컴퓨터(computer) caculation + remember
+
+### 위에서 아래로 순차적으로 명령을 수행, 특정 상황에 따라 코드를 선택적으로 실행(분기/조건하거나 계속하여 실행(반복)하는 제어가 필요함
+
+### 제어문은 순서도(flow chart)로 표현이 가능
+
+
+
+## 38. 조건문
+
+### 참/거짓을 판단할 수 있는 조건식과 함께 사용
+
+### expression에는 참/거짓에 대한 조건식 - 조건이 참인 경우 이후 들여쓰기 되어있는 코드 블럭을 실행
+
+### 이외의 경우 else 이후 들여쓰기 되어있는 코드 블럭을 실행 - else는 선택적으로 활용 가능함 
+
+<code>if num % 2 == 1:</code> number를 2로 나누어서 나온 나머지 값이 1과 같은가?
+
+## bool(자료형으로 참,거짓)을 유추
+
+
+
+## 39. 복수 조건문
+
+### 복수의 조건식을 활용할 경우 elif를 활용하여 표현함
+
+### 복수 조건문
+
+### 
+
+```python
+ if <expression>: # Code block
+	elif <expression>:
+    # Code block
+	elif <expression>:
+    # Code block
+	else:
+		# Code block
+    
+ dust = 80
+if dust > 150: 
+  print('매우 나쁨')
+elif dust > 80: 
+  print('나쁨')
+elif dust > 30: 
+  print('보통')
+else: 
+  print('좋음')
+print('미세먼지 확인 완료')
+
+dust = -10
+if dust > 150: 
+  print('매우 나쁨') 
+  if dust > 300:
+		print('실외 활동을 자제하세요.') 
+elif dust > 80:
+	print('나쁨') 
+elif dust > 30:
+	print('보통') 
+else:
+		if dust >= 0: 
+      print('좋음')
+		else:
+			print('값이 잘못되었습니다.')
+```
+
+
+
+## 40. 중첩 조건문
+
+## 조건문은 다른 조건문에 중첩되어 사용될 수 있음
+
+### 들여쓰기를 유의하여 작성할 것
+
+
+
+## 41. 조건표현식(conditional expression)
+
+### 
+
+```python
+<true인 경우 값> if <expression> else <false인 경우 값>
+
+value = num if num >= 0 else -num
+
+value = num if num >= 0 else -num
+			참일 경우 <expression> 	 거짓일 경우
+  
+
+value = num if num >= 0 else -num 
+			참일 경우 <expression>   거짓일 경우
+  
+ num = int(input())
+	value = num if num >= 0 else -num 
+	print(value)
+  
+ num = int(input())
+	value = num if num >= 0 else -num 
+  print(value)
+  
+ num = 2
+if num % 2:
+		result = '홀' 
+else:
+		result = '짝' 
+print(result)
+
+num = 2
+result = '홀' if num % 2 else '짝' 
+print(result)
+
+ num = -5
+value = num if num >= 0 else 0 
+print(value)
+
+ num = -5
+if num >= 0:
+    value = num
+else:
+    value = 0
+print(value)
+```
+
+## 42. 반복문
+
+### 특정 조건을 도달할 때까지, 계속 반복되는 일련의 문장
+
+
+
+## 43. 반복문의 종류
+
+### while 문 - 종료조건에 해당하는 코드를 통해 반복문을 종료시켜야 함
+
+### for 문 - 반복가능한 객체를 모두 순회하면 종료
+
+### 반복 제어 - break continue for-else
+
+
+
+## 44. while
+
+### while문은 조건식이 참인 경우 반복적으로 코드를 실행 
