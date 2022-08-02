@@ -156,7 +156,7 @@ print(x, y)</code>
 
 ## 자료형 분류
 
-### 불린형(boolean type) - True / False 값을 가진 타입 bool, 비교/논리 연ㅅ나을 수행함에 있어서 활용됨, 0 0.0 () [] '' none false로 변환됨
+### 불린형(boolean type) - True / False 값을 가진 타입 bool, 비교/논리 연산나을 수행함에 있어서 활용됨, 0 0.0 () [] '' none false로 변환됨
 
 ### 수치형(numeric type)- int(정수, integer) float(부동소수점, 실수, floating point number) complex(복소수, complex number)
 
@@ -676,4 +676,532 @@ print(value)
 ## 44. while
 
 ### while문은 조건식이 참인 경우 반복적으로 코드를 실행 
+
+### 조건이 참 - 들여쓰기 되어있는 코드 블록이 실행됨 - 코드 블록이 모두 실행되고 다시 조거식을 검사하며 반복적으로 실행됨 - 종료조건이 반드시 필요
+
+```python
+a = 0
+while a < 5:
+  print(a)
+  a += 1
+print('끝')
+ㅡㅡ
+# 1부터 사용자가 입력한 양의 정수까지의 총합을 구하는 코드를 작성하시오
+# 값 초기화
+n = 0
+total = 0
+user_input = int(input())
+
+while n <= user_input:
+  total += n
+  n += 1
+print(total)
+
+```
+
+## 45.  for
+
+### for문은 시퀀스(string, tuple, list, range)를 포함한 순회가능한 객체(iterable) 요소를 모두 순회함, 처음부터 끝까지 모두 순회하므로 별도의 종료조건이 필요하지 않음
+
+
+
+## 46. for문 일반 형식
+
+### iterable, 순회할 수 있는 자료형(str, list, dict) 순회형 함수(range, enumerate)
+
+
+
+## 47. 문자열 순회
+
+### 사용자가 입력한 문자를 한 글자씩 세로로 출력하시오
+
+```python
+chars = input()
+
+for char in chars:
+  print(char)
+
+# 사용자가 입력한 문자를 range를 활용하여 한 글자씩 출력하시오
+chars = input()
+
+for idx in range(len(chars)):
+  print(chars[idx])
+  
+```
+
+
+
+## 48. enumerate 순회
+
+### enumerate() 인덱스와 객체를 쌍으로 담은 열거형(enumerate) 객체 반환, (index, value) 형태의 tuple로 구성된 열거 객체를 반환
+
+```python
+members = ['민수', '영희', '철수']
+
+for i in range(len(members)):
+  print(f'{i} {members[1]}')
+  
+for i, member in enumerate(members):
+  print(i, member)
+ 
+enumerate(members)
+list(enumerate(members)) # 숫자와 값의 tuple
+list(enumerate(members, start=1)) # 기본값 0, start를 지정하면 해당 값부터 순차적으로 증가
+  
+```
+
+
+
+## 49. 딕셔너리 순회
+
+### 딕셔너리는 기본적으로 key를 순회하며, key를 통해 값을 활용
+
+```python
+grades = {'john': 80, 'eric': 90}
+for name in grades:
+  print(name)
+  
+grades = {'john': 80, 'eric': 90}
+for name in grades:
+  print(name)
+```
+
+
+
+## 50. 반복문 제어
+
+### break 반복문을 종료 continue 이후의 코드 블록은 수행하지 않고, 다음 반복을 수행 for-else 끝까지 반복문을 실행한 이후에 else문 실행(break를 통해 중간에 종료되는 경우 else 문은 실행되지 않음)
+
+```python
+for i in range(10):
+	if i > 1:
+		print('0과 1만 필요해!')
+		break
+print(i)
+# 0
+# 1
+# 0과 1만 필요해!
+
+n = 0
+while True:
+  if n == 3:
+    break
+  print(n)
+  n += 1
+# 0
+# 1
+# 2
+
+for i in range(6):
+  if i % 2 == 0;
+  	continue
+  print(i)
+# 1
+# 3
+# 5
+
+for char in 'apple':
+  if char == 'b':
+    print('b!')
+    break
+else:
+  print('b가 없습니다.')
+# b가 없습니다.
+
+for char in 'banana':
+  if char == 'b':
+    print('b!')
+    break
+else:
+  print('b가 없습니다.')
+# b!
+```
+
+## 51. 함수의 정의
+
+### 함수(function) 특정한 기능을 하는 코드의 조각(묶음) 특정 명령을 수행하는 코드를 매번 다시 작성하지 않고, 필요 시에만 호출하여 간편히 사용
+
+### 사용자 함수 구현되어 있는 함수가 없는 경우, 사용자가 직접 함수를 작성 가능
+
+
+
+## 52. 함수를 사용해야 하는 이유
+
+### 초기 값 설정 표준편차 계산 재사용이 가능한가?
+
+### 내장함수(built-in function) 활용
+
+### pstdev 함수 (파이썬 표준 라이브러리 - statistics)
+
+### keyword name parameters return docstring function body
+
+
+
+## 53. 함수 기본 구조
+
+### 선언과 호출 (define & call) 입력 (input) 범위 (scope) 결과값(output)
+
+
+
+## 54. 선언과 호출
+
+### 함수의 선언은 def 키워드를 활용함 들여쓰기를 통해 function body(실행될 코드 블록)를 작성함 함수는 parameter를 넘겨줄 수 있음 함수는 동작 후에 return을 통해 결과값을 전달함
+
+
+
+## 55. 선언 및 호출
+
+### 함수는 함수명()으로 호출 parameter가 있는 경우, 함수명(값1, 값2, ...)로 호출
+
+
+
+## 56. 함수의 결과값 (output)
+
+### 함수는 반드시 값을 하나만 return한다. 명시적인 return이 없는 경우에도 none을 반환한다.
+
+### 함수는 return과 동시에 실행이 종료된다.
+
+```python
+# 튜플 반환
+def minus_and_product(x, y):
+  return x - y, x * y
+
+minus_and_product(4, 5)
+```
+
+## 57. return vs print
+
+### return은 함수 안에서 값을 반환하기 위해 사용되는 키워드 print는 출력을 위해 사용되는 함수
+
+
+
+## 58. parameter vs argument
+
+### parameter: 함수를 실행할 때, 함수 내부에서 사용되는 식별자
+
+### argument: 함수를 호출 할 때, 넣어주는 값 함수 호출 시 함수의 parameter를 통해 전달되는 값 argument는 소괄호 안에 할당 func_name(argument)
+
+### 필수 argument(반드시 전달되어야 하는 argument), 선택 argument(값을 전달하지 않아도 되는 경우는 기본 값이 전달)
+
+
+
+## 59. positional arguments
+
+### 기본적으로 함수 호출 시 Argument는 위치에 따라 함수 내에 전달됨
+
+```
+def add(x, y):		add(2, 3)
+		return x + y
+		
+def add(x, y):		add(x=2, y=5)
+		return x + y	add(2, y=5)
+		
+def add(x, y=0):  add(2)
+		return x + y
+
+def add(*args):		add(2)
+		for arg in args:	add(2, 3, 4, 5)
+		print(arg)
+
+def family(**kwargs):
+		for key, value in kwargs:
+			print(key, ":", value)
+family(father='John', mother='Jane', me='John Jr.')
+```
+
+
+
+## 60. keyword arguments
+
+### 직접 변수의 이름으로 특정 Argument를 전달할 수 있음 keyword argument 다음에 positional argument를 활용할 수 없음
+
+
+
+## 61. Default arguments values
+
+### 기본값을 지정하여 함수 호출 시 argument 값을 설정하지 않도록 함, 정의된 것 보다 더 적은 개수의 argument들로 호출 될 수 있음
+
+
+
+## 62. 정해지지 않은 개수의 arguments
+
+### 여러 개의 positional argument를 하나의 필수 parameter로 받아서 사용, 몇 개의 positional argument를 받을지 모르는 함수를 정의할 때 유용
+
+### argument들은 튜플로 묶여 처리되며, parameter에 *를 붙여 표현
+
+### 함수가 임의의 개수 argument를 keyword argument로 호출될 수 있도록 지정
+
+### argument들은 딕셔너리로 묶여 처리되며, parameter에 **를 붙여 표현
+
+
+
+## 63. 함수의 scope
+
+### 함수는 코드 내부에 local scope를 생성하며, 그 외의 공간인 global scope로 구분
+
+### scope(global scope 코드 어디에서든 참조할 수 있는 공간 local scope 함수가 만든 scope 함수 내부에서만 참조 가능)
+
+### variable(global variable global scope에 정의된 변수 local variable local scope에 정의된 변수 )
+
+
+
+## 64. 객체 수명주기
+
+### 객체는 각자의 수명주기(lifecycle)가 존재 built-in scope 파이썬이 실행된 이후부터 영원히 유지 global scope 모듈이 호출된 시점 이후 혹은 인터프리터가 끝날 때까지 유지 local scope 함수가 호출될 때 생성되고 함수가 종료될 때까지 유지
+
+```python
+ def func(): 
+    a = 20
+    print('local', a)
+
+func() 
+print('global', a)
+# local 20
+```
+
+
+
+## 65. 이름 검색 규칙(Name resolution)
+
+### 파이썬에서 사용되는 이름(식별자)들은 이름공간(namespace)에 저장되어 있음
+
+### 아래와 같은 순서로 이름을 찾아나가며, LEGB rule이라고 부름 (Local scope: 함수, enclosed scope: 특정 함수의 상위 함수, global scope: 함수 밖의 변수 import 모듈, built-in scope: 파이썬 안에 내장되어 있는 함수 또는 속성)
+
+### 즉 함수 내에서는 바깥 scope의 변수에 접근 가능하나 수정은 할 수 없음
+
+```python
+print(sum) 
+print(sum(range(2))) 
+sum = 5
+print(sum) 
+print(sum(range(2)))
+```
+
+
+
+## 66. 내장 함수 응용
+
+### 파이썬 인터프리터에는 사용할 수 있는 많은 함수와 형(type)이 내장되어 있음
+
+
+
+## 67. map(function, iterable)
+
+### 순회 가능한 데이터구조(iterable)의 모든 요소에 함수(function)적용하고, 그 결과를 map object로 반환, 리스트 형변환을 통해 결과 직접 확인
+
+
+
+## 68. map
+
+### 알고리즘 문제 풀이시 input 값들을 숫자로 바로 활용하고 싶을 때
+
+
+
+## 69. 선언적 지식(declarative knowledge), 명령적 지식(imperative knowledge)
+
+
+
+## 70. 변수와 타입(int, float, complex, bool, str, list, tuple, range, set, dictionary)
+
+```python
+word = 'happy!'
+cnt = 0
+for char in word:
+		cnt += 1
+```
+
+
+
+## 71. 시퀀스(순서가 있는 데이터 구조) - 문자열(string) 리스트(list)
+
+
+
+## 72. 문자열(string type)
+
+### 문자들의 나열(sequence of characters)- 모든 문자는 str 타입
+
+### 문자열의 작은 따옴표(')나 큰 따옴표(")를 활용하여 표기- 문자열을 묶을 때 동일한 문장부호를 활용, PEP8에서는 소스코드 내에서 하나의 문장부호를 선택하여 유지하도록 함
+
+
+
+## 73. 문자열 탐색/검증
+
+### s.find(*x*)  x의 첫 번째 위치를 반환. 없으면, -1을 반환
+
+### s.index(x) x의 첫 번째 위치를 반환. 없으면, 오류 발생
+
+### s.isalpha() 알파벳 문자 여부 *단순 알파벳이 아닌 유니코드 상 Letter (한국어도 포함)
+### s.isupper() 대문자 여부
+
+### s.islower() 소문자 여부
+
+### s.istitle() 타이틀 형식 여부
+
+
+
+## 74. 문자열 탐색
+
+### .find(x) x의 첫 번째 위치를 반환. 없으면, -1을 반환함
+
+```python
+print('apple'.find('p'))
+# 1
+print('apple'.find('k'))
+# -1
+```
+
+### .index(x) x의 첫 번째 위치를 반환. 없으면, 오류 발생
+
+```python
+print('apple'.index('p'))
+# 1
+'apple'.index('k')
+```
+
+
+
+## 75. 문자열 관련 검증 메소드
+
+```python
+print('abc'.isalpha()) 
+# True 
+print('Ab'.isupper()) 
+# False 
+print('ab'.islower()) 
+# True
+print('Title Title!'.istitle())
+# True
+```
+
+
+
+## 76. 문자열 변경
+
+### s.replace(*old, new[,count]*) 바꿀 대상 글자를 새로운 글자로 바꿔서 반환 count를 지정하면 해당 개수만큼만 시행
+
+```python
+print('coone'.replace('o', 'a’))
+# caane
+print('wooooowoo'.replace('o', '!', 2)) 
+# w!!ooowoo
+```
+
+
+
+### s.strip(*[chars]*) 공백이나 특정 문자를 제거 양쪽을 제거하거나(strip), 왼쪽을 제거하거나(lstrip) 오른쪽을 제거(rstrip) 문자열을 지정하지 않으면 공백을 제거함
+
+```python
+print(' 와우!\n'.strip())
+# '와우!'
+print(' 와우!\n'.lstrip())
+# '와우!\n'
+print(' 와우!\n'.rstrip())
+#' 와우!'
+print('안녕하세요????'.rstrip('?’))
+# '안녕하세요'                         
+```
+
+
+
+### s.split(*sep=None, maxsplit=-1*) 공백이나 특정 문자를 기준으로 분리 문자열을 특정한 단위로 나눠 리스트로 반환 sep이 none이거나 지정되지 않으면 연속된 공백문자를 단일한 공백문자로 간주하고 선행/후행 공백은 빈 문자열에 포함시키지 않음 maxsplit이 -1인 경우에는 제한이 없음
+
+```python
+print('a,b,c'.split('_’))
+# ['a,b,c']                    
+print('a b c'.split())
+# ['a', 'b', 'c']                    
+```
+
+
+
+### '*separator*'.join(*[iterable]*) 구분자로 iterable을 합침
+
+```python
+print(''.join(['3', '5']))
+# 35
+```
+
+### s.capitalize() 가장 첫 번째 글자를 대문자로 변경
+
+### s.title() '나 공백 이후를 대문자로 변경
+
+### s.upper() 모두 대문자로 변경
+
+### s.lower() 모두 소문자로 변경
+
+### s.swapcase() 대↔ 소문자 서로 변경
+
+
+
+## 77. 기타 변경
+
+### 문자열 변경 예시
+
+```python
+msg = 'hI! Everyone.' 
+print(msg) 
+print(msg.capitalize()) 
+print(msg.title()) 
+print(msg.upper()) 
+print(msg.lower()) 
+print(msg.swapcase())
+```
+
+
+
+## 78. 리스트(List) 정의
+
+### 변경 가능한 값들의 나열된 자료형 순서를 가지며 서로 다른 타입의 요소를 가질 수 있음 변경 가능하며(mutable)  반복 가능함(iterable) 항상 대괄호 형태로 정의하며 요소는 콤마로 구분 [0, 1, 2, 3, 4, 5]
+
+### L.append(x)  리스트 마지막에 항목 x를 추가
+
+### L.insert(i, x) 리스트 인덱스 i에 항목 x를 삽입
+
+### L.remove(x) 리스트 가장 왼쪽에 있는 항목(첫 번째) x를 제거 항목이 존재하지 않을 경우, ValueError
+
+### L.pop() 리스트 가장 오른쪽에 있는 항목(마지막)을 반환 후 제거
+
+### L.pop(i) 리스트의 인덱스 i에 있는 항목을 반환 후 제거
+
+### L.extend(m) 순회형 m의 모든 항목들의 리스트 끝에 추가 (+=과 같은 기능)
+
+### L.index(x, start, end) 리스트에 있는 항목 중 가장 왼쪽에 있는 항목 x의 인덱스를 반환
+
+### L.reverse() 리스트를 거꾸로 정렬
+
+### L.sort() 리스트를 정렬 (매개변수 이용가능)
+
+### L.count(x) 리스트에서 항목 x가 몇 개 존재하는지 갯수를 반환
+
+
+
+## 79. 값 추가 및 삭제
+
+### .append(x) 리스트에 값을 추가함
+
+```python
+cafe = ['starbucks', 'tomntoms', 'hollys']
+print(cafe)
+cafe.append('banapresso')
+print(cafe)
+```
+
+### .extend(iterable) 리스트에 iterable의 항목을 추가함
+
+```python
+cafe = ['starbucks', 'tomntoms', 'hollys’]
+print(cafe)
+cafe.extend(['cafe', 'test’])
+print(cafe)
+```
+
+### .insert(i, x) 정해진 위치 i에 값을 추가함
+
+### .remove(x)  리스트에서 값이 x인 것 삭제
+
+### .pop(i) 정해진 위치 i에 있는 값을 삭제하고 그 항목을 반환함 i가 지정되지 않으면 마지막 항목을 삭제하고 반환함
+
+
+
+
 
